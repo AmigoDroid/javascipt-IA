@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/AmigoDroid/javascipt-IA/issues"
   },
-  "homepage": "https://github.com/AmigoDroid/javascipt-IA#readme"
+  "homepage": "https://github.com/AmigoDroid/javascipt-IA#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
