@@ -5,6 +5,7 @@ const boryparser = require('body-parser');
 
 const routes = require('./routes')
 //const bodyParser = require('body-parser');
+var porta = process.env.PORT || 8877;
 
 const app = express();
 app.use(morgan('dev'));
@@ -14,6 +15,6 @@ app.use(cors());
 app.use(routes);
 
 
-app.listen(2000,()=>{
+app.listen(PORT,()=>{
     console.log('rodando na porta:2000');
 })
