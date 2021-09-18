@@ -1,3 +1,0 @@
-function api_json(){
-    
-}
