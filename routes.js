@@ -8,6 +8,12 @@ let db = [
     {'3':{Nome:'cliente 3', Idade: '20'}}
 ]
 
+routes.get('/',(req,res) =>{
+    return res.json(
+        {Nome:'ok'}
+    )
+})
+
 routes.get('/api',(req,res) => {
     return res.json(db);
 });
