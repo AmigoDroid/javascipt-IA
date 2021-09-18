@@ -1,0 +1,19 @@
+{
+  "name": "javascipt-ia",
+  "version": "1.0.0",
+  "description": "criando minha api",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmigoDroid/javascipt-IA.git"
+  },
+  "author": "AmigoDroid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AmigoDroid/javascipt-IA/issues"
+  },
+  "homepage": "https://github.com/AmigoDroid/javascipt-IA#readme"
+}
