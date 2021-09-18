@@ -2,7 +2,7 @@
   "name": "javascipt-ia",
   "version": "1.0.0",
   "description": "criando minha api",
-  "main": "api.js",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
