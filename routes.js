@@ -7,18 +7,18 @@ let db ={
         filho:'Gustavo',IdadeFilho:'2'}
 
 let usuario={
-    Nome:'Luciano',Idade:'20'
+    Nome:'Luciano',Idade:'22'
 }
 
  routes.get('/',(req,res) =>{
-    return res.json('ERRO GET 404!')
+    return res.end('<h1>ERRO GET 404!</h1>')
 })
 
 routes.get('/api',(req,res) => {
     return res.json(db);
 });
 routes.get('/usuario',(req,res)=>{
-    return res.json(usuario)
+    return res.json(usuario)  
 })
 routes.post('/adduser',(req,res)=>{
     const dados = req.body;
