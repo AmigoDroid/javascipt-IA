@@ -11,7 +11,7 @@ let usuario={
 }
 
  routes.get('/',(req,res) =>{
-    return res.render('./index.html');
+    return res.end('<h1>ERRO GET 404!</h1>')
 })
 
 routes.get('/api',(req,res) => {
