@@ -3,8 +3,8 @@ const routes = express.Router();
 
 
 let db ={
-        Esposa:'Larissa',Idade:'16',
-        filho:'Gustavo',Idade:'2'}
+        Esposa:'Larissa',IdadeEsposa:'16',
+        filho:'Gustavo',IdadeFilho:'2'}
 
 let usuario={
     Nome:'Luciano',Idade:'20'
