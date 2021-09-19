@@ -11,9 +11,7 @@ let usuario={
 }
 
 routes.get('/',(req,res) =>{
-    return res.json(
-        {Nome:'ok'}
-    )
+    return res('<h1> ERRO 404! </h1>')
 })
 
 routes.get('/api',(req,res) => {
