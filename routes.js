@@ -7,7 +7,7 @@ let db ={
         filho:'Gustavo',IdadeFilho:'2'}
 
 let usuario={
-    Nome:'Luciano',Idade:'22'
+    Nome:'Luciano',Idade:'22',SobreNome:'da silva costa',Saldo:293752.13,Logado:true
 }
 
  routes.get('/',(req,res) =>{
