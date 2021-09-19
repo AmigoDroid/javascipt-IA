@@ -10,9 +10,9 @@ let usuario={
     Nome:'Luciano',Idade:'20'
 }
 
-routes.get('/',(req,res) =>{
-    return res('ERRO GET 404!')
-})
+// routes.get('/',(req,res) =>{
+//     return res.json('ERRO GET 404!')
+// })
 
 routes.get('/api',(req,res) => {
     return res.json(db);
