@@ -2,12 +2,12 @@ const express = require('express');
 const routes = express.Router();
 
 
-let db = {
-    users:[
-        {Nome:'Luciano',Idade:'20'},
-        {Nome:'Larissa',Idade:'16'},
-        {Nome:'Gustavo',Idade:'2'}
-          ] 
+let db ={
+        Esposa:'Larissa',Idade:'16',
+        filho:'Gustavo',Idade:'2'}
+
+let usuario={
+    Nome:'Luciano',Idade:'20'
 }
 
 routes.get('/',(req,res) =>{
@@ -19,7 +19,9 @@ routes.get('/',(req,res) =>{
 routes.get('/api',(req,res) => {
     return res.json(db);
 });
-
+routes.get('/usuario',(req,res)=>{
+    return res.json(usuario)
+})
 routes.post('/adduser',(req,res)=>{
     const dados = req.body;
     if(!body){
