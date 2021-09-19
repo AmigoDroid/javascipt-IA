@@ -29,14 +29,13 @@ routes.get('/api/usuario',(req,res)=>{
 })
 routes.post('/adduser',(req,res)=>{
     const dados = req.body;
-    if(!body){
-        return res.status(400).end();
-    }
+    if(!body)
+         return res.status(400).end();
+
+    usuarios.push(dados)
+    return res.json(dados);
 })
 routes.delete('/usuario/del=:id',(req,res)=>{
     const id = req.params.id;
 });
-
-
-
 module.exports = routes;
