@@ -2,14 +2,11 @@ const express = require('express');
 const routes = express.Router();
 
 
-let usuarios ={
-    'user':[
+let usuarios =[
         {id:'0', Nome:'Luciano',SobreNome:'da silva costa',Cpf:0,Saldo:54280.78,Logado:true,usuariro:'admin',senha:0},
         {id:'1',Nome:'Larissa',SobreNome:'gomes lima',Cpf:0,Saldo:54280.78,Logado:true,usuariro:'esposa',senha:0},
         {id:'2',Nome:'Luiz Gustavo',SobreNome:'lima costa',Cpf:0,Saldo:54280.78,Logado:true,usuariro:'filho',senha:0}
 ]
-}
-
 let usuario={
     Nome:'Luciano',Idade:'22',SobreNome:'da silva costa',Saldo:293752.13,Logado:true
 }
