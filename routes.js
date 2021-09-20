@@ -36,7 +36,7 @@ routes.post('/adduser',(req,res)=>{
          return res.status(400).end();
 
    // usuarios.push(dados)
-    return res.json(dados);
+    return res(dados);
 })
 routes.delete('/usuario/del=:id',(req,res)=>{
     const id = req.params.id;
