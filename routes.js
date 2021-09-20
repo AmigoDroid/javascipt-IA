@@ -6,7 +6,7 @@ let usuarios =[
         {id:'0', Nome:'Luciano',SobreNome:'da silva costa',Cpf:0,Saldo:54280.78,usuario:'admin',senha:0},
         {id:'1',Nome:'Larissa',SobreNome:'gomes lima',Cpf:0,Saldo:10000000,usuario:'Larissa123',senha:5824},
         {id:'2',Nome:'Luiz Gustavo',SobreNome:'lima costa',Cpf:0,Saldo:54450280.78,usuario:'Gustavo123',senha:5824},
-        {id:'3',Nome:'wheliton',SobreNome:'braz',Cpf:0,Saldo:18754250.51,usuario:'braz01',senha:0}
+        {id:'3',Nome:'wheliton',SobreNome:'braz',Cpf:0,Saldo:18758250.51,usuario:'braz01',senha:0}
         
 ]
 let usuario={
