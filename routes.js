@@ -35,7 +35,7 @@ routes.post('/adduser',(req,res)=>{
     if(!body)
          return res.status(400).end();
 
-    usuarios.push(dados)
+   // usuarios.push(dados)
     return res.json(dados);
 })
 routes.delete('/usuario/del=:id',(req,res)=>{
