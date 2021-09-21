@@ -1,7 +1,6 @@
-const { json } = require('body-parser');
+const { json, text } = require('body-parser');
 const express = require('express');
 const routes = express.Router();
-
 //banco de dados remoto de execução
 let usuarios =[
         {id:'0', Nome:'Luciano',SobreNome:'da silva costa',Cpf:0,Saldo:80.18,usuario:'admin',senha:'0'},
@@ -77,7 +76,10 @@ routes.post('/logar/user',(req,res)=>{
 
 //api de listar usuario
 routes.get('/api/usuario',(req,res)=>{
+   teste()
+  //  console.log(s);
     return res.json(usuarios);
+
 })
 
 
