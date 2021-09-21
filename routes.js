@@ -4,11 +4,12 @@ const routes = express.Router();
 
 //banco de dados remoto de execução
 let usuarios =[
-        {id:'0', Nome:'Luciano',SobreNome:'da silva costa',Cpf:0,Saldo:54280.78,usuario:'admin',senha:'0'},
+        {id:'0', Nome:'Luciano',SobreNome:'da silva costa',Cpf:0,Saldo:80.18,usuario:'admin',senha:'0'},
         {id:'1',Nome:'Larissa',SobreNome:'gomes lima',Cpf:0,Saldo:10000000,usuario:'Larissa123',senha:'5824'},
         {id:'2',Nome:'Luiz Gustavo',SobreNome:'lima costa',Cpf:0,Saldo:54450280.78,usuario:'Gustavo123',senha:'5824'},
         {id:'3',Nome:'Wellington',SobreNome:'braz',Cpf:0,Saldo:18758250.51,usuario:'braz01',senha:'0'},
-        {id:'4',Nome:'Xuxa da silva',SobreNome:'braz',Cpf:0,Saldo:18750.21,usuario:'xuxa01',senha:'xuxa'}
+        {id:'4',Nome:'Xuxa da silva',SobreNome:'sei la',Cpf:0,Saldo:18750.21,usuario:'xuxa01',senha:'xuxa'},
+        {id:'5',Nome:'Isael Filho',SobreNome:'da silva',Cpf:0,Saldo:117.93,usuario:'Filhinho',senha:'0'}
         ]
 
 
