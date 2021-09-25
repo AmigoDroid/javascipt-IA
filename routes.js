@@ -14,7 +14,8 @@ let usuarios =[
         {id:'2',Nome:'Luiz Gustavo',SobreNome:'lima costa',Cpf:4123,Saldo:54450280.78,usuario:'Gustavo123',senha:'5824'},
         {id:'3',Nome:'Wellington',SobreNome:'braz',Cpf:1520,Saldo:18758250.51,usuario:'braz01',senha:'0'},
         {id:'4',Nome:'Xuxa da silva',SobreNome:'braz',Cpf:4647,Saldo:18750.21,usuario:'xuxa01',senha:'xuxa'},
-        {id:'5',Nome:'Isael Filho',SobreNome:'costa',Cpf:8740,Saldo:2.71,usuario:'Filhinho',senha:'0'}
+        {id:'5',Nome:'Isael Filho',SobreNome:'costa',Cpf:8740,Saldo:2.71,usuario:'Filhinho',senha:'0'},
+        {id:'6',Nome:'Olá Visitante',SobreNome:'',Cpf:00000000000,Saldo:20,usuario:'Visitar',senha:'1234'}
         ]
 
 
@@ -106,7 +107,7 @@ routes.delete('/usuario/del=:id',(req,res)=>{
 });
 
 //iiniciando busca do cpf
-routes.post('/cpf',(req,res)=>{
+routes.post('/api/user-cpf',(req,res)=>{
   var teste = req.body;
   let rep = vercpf(teste)
    return res.json(rep);
@@ -138,5 +139,21 @@ if(gpo.cpf == cpf){
 }
 }
 }
-routes.post('/api/cpf/pix-pagar')
+
+routes.put('/teste-tst',(req,res)=>{
+    var body = req.body;
+    if(!body){
+      return  res.status(400).send('erro!')
+    }else{
+        //rodar meu codigo
+
+
+
+
+        return res.send('tudo certo')
+    }
+   
+})
+
+
 module.exports = routes;
