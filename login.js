@@ -28,7 +28,8 @@ function checar_user(body){
             let body ={
                 logado:true,
                 nome:usuarios[i].Nome,
-                saldo:usuarios[i].Saldo
+                saldo:usuarios[i].Saldo,
+                cpf:usuarios[i].Cpf
             }
             //retorna nome e saldo;
             return body;
