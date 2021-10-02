@@ -5,7 +5,8 @@ const appAndroid = express.Router();
 const usuario = {
     Nome:'Luciano',
     SobreNome:'da silva costa'
-    ,Cpf:8476,Saldo:54280.78
+    ,Cpf:8476,
+    Saldo:54280.78
     ,usuario:'admin'
     ,senha:'0'
 }
