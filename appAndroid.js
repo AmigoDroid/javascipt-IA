@@ -33,18 +33,23 @@ function dadosUser(position){
 function userInfo(username,password){
     let uss = username;
     let paser= password;
-    for (let i =0; i <= usuarios.length-1;i++){
+
+    for (let i = 0; i <= usuarios.length - 1; i++){
+
         let user = usuarios[i].usuario;
         let pass = usuarios[i].senha;
 
         console.log('meu use: '+uss+' : '+user);
 
-        if(user===uss && pass === paser){
+        if(user === uss && pass === paser){
+
             let resposta = dadosUser(i);
+
             return resposta;
         }else{
             //não existe
-            if(i>=usuarios.length-1){
+            if(i >= usuarios.length-1){
+
                 return {logado:false} ; 
             }
            
@@ -54,8 +59,7 @@ function userInfo(username,password){
 }
 
 appAndroid.get('/app/login/:user/:pass',(req,res)=>{
-   // let us = req.params.user;
-   // let ps = req.params.pass;
+    
     let resposta =  userInfo(req.params.user,req.params.pass);
 
     return res.json(resposta);
