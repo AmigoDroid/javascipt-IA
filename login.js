@@ -20,11 +20,7 @@ login.get('/api/usuario',(req,res)=>{
     return res.json(usuarios);
 });
 
-login.post('/api/user-cpf',(req,res)=>{
-    var teste = req.body;
-    let rep = vercpf(teste)
-     return res.json(rep);
-});
+login.post('/api/user-cpf',script.vercpf);
 
 
 
