@@ -48,7 +48,7 @@ module.exports = {
 }}}},//end
 
 async vercpf(req,res){
-    const usuarios=req.body;
+    const num_cpf=req.body;
     let id = usuarios.length;
     id-=1;
     console.log(id);
