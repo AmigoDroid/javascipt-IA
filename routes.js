@@ -1,9 +1,6 @@
-
-const { json, text } = require('body-parser');
 const express = require('express');
 const routes = express.Router();
-
-routes.use(require('./login'));
+const sp = require('./script/scripts');
 
 //ROTAS DO MEU SERVIDOR
  routes.get('/',(req,res) =>{
@@ -14,9 +11,5 @@ routes.use(require('./login'));
 routes.delete('/usuario/del=:id',(req,res)=>{
     const id = req.params.id;
 });
-
-
-
-
 
 module.exports = routes;
