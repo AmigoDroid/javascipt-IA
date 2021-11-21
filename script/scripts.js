@@ -82,7 +82,7 @@ async criartb(req,res){
 },
 async cadastrar(req,res){
     const dados = req.body;
-    config.sync(tabela);
+    this.criartb;
     await tabela.create(dados).then(()=>{
         return res.json({resposta:true,code:1});
     }).catch(()=>{
