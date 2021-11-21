@@ -17,40 +17,33 @@ const usuarios =[
 module.exports = {
 //FUNÇÃO DE AUTENTICAÇÃO
   
-     async checar_user(req,res){
+async checar_user(req,res){
      const body = req.body;
-    console.log(usuarios);
-    let numUsers = usuarios.length;
-    
-    let id = parseInt(numUsers);
-    id-=1;
-    let UsuarioId = body.usuario;
-    let SenhaId = body.senha;
-    //iniciar busca
-    for(i=0;i<=id;i++){
-        //laço for buscar usuario
-        let usere = usuarios[i].usuario;
-        let pass = usuarios[i].senha;
-        if(UsuarioId===usere && SenhaId===pass){
-            let body ={
-                logado:true,
-                nome:usuarios[i].Nome,
-                saldo:usuarios[i].Saldo,
-                cpf:usuarios[i].Cpf
-            }
-            //retorna nome e saldo;
-            return res.json(body);
-            break;
-        }else{
-            if(i>=id){
-                console.log('nao logado');
-                //retornar algum erro
-                let body ={
-                    logado:false
-                }
-                return res.json(body);
+     const {usuario,senha}= body;
+     const dados = await tabela.findAll();
+     const positions = dados.length;
+     if(positions<=0){
+         return res.json({resposta:false})
+     }else{
+         for(let i =0;i<positions;i++){
+
+             let userID=dados[i].usuario;
+             let passID=dados[i].senha;
+
+             if(usuario==userID && senha==passID){
+                res.json({resposta:true,cpf:dados[i].cpf})
                 break;
-}}}},
+             }else{
+                 if(i>=positions){
+                     res.json({resposta:false})
+                     break;
+                 }
+             }
+         }
+     }
+
+  
+         },
 //VERIFICAR CPF
 async vercpf(req,res){
     const num_cpf=req.body;
@@ -89,7 +82,11 @@ async criartb(req,res){
 },
 async cadastrar(req,res){
     const dados = req.body;
-    await tabela.create(dados)
+    await tabela.create(dados).then(()=>{
         return res.json({resposta:true});
+    }).catch(()=>{
+        return res.json({resposta:false})
+    })
+        
 }
   };
