@@ -7,6 +7,11 @@ const usuarios =[
     {id:'5',Nome:'Isael Filho',SobreNome:'costa',Cpf:8740,Saldo:2.71,usuario:'Filhinho',senha:'0'},
     {id:'6',Nome:'Olá Visitante',SobreNome:'',Cpf:12345678909,Saldo:20,usuario:'Visitar',senha:'1234'}
     ]
+    //FERRAMENTAS
+    const tabela = require('../dadosPostgres/usuario');
+    const config = require('../dadosPostgres/config');
+    
+    
 //DADOS DE LOGIN
 
 module.exports = {
@@ -45,8 +50,8 @@ module.exports = {
                 }
                 return res.json(body);
                 break;
-}}}},//end
-
+}}}},
+//VERIFICAR CPF
 async vercpf(req,res){
     const num_cpf=req.body;
     let id = usuarios.length;
@@ -73,5 +78,21 @@ async vercpf(req,res){
              return res.json(body);
      }}}}//end;
 
-
-    };
+,
+//CRIAR TABELA
+async criartb(req,res){
+    config.sync(tabela).then(()=>{
+        res.send('tabela criada');
+    }).catch(()=>{
+        res.send('falha');
+    })
+},
+async cadastrar(req,res){
+    const dados = req.body;
+    tabela.create(dados).then(()=>{
+        return res.json({resposta:true});
+    }).catch(()=>{
+        return res.json({resposta:false});
+    })
+}
+  };

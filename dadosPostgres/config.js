@@ -4,6 +4,9 @@ const user='jacirfab';
 const pass='PeRRDsLYXyIpSlyVLgdPXio8M7RVjGZd';
 const porta=5432;
 const url='castor.db.elephantsql.com';
+
+
+
 const sequelize = new Siquelize(name_database,user,pass,
     {
         host:url,
@@ -14,5 +17,6 @@ const sequelize = new Siquelize(name_database,user,pass,
         console.log('conectado');
     }).catch(()=>{
         console.log('erro');
-    })
-module.export=sequelize;
+    });
+
+module.exports=sequelize;

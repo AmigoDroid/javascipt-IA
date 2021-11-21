@@ -4,16 +4,7 @@ const script = require('./script/scripts');
 
 login.post('/login',script.checar_user);
 
-login.post('/adduser',(req,res)=>{
-    const body = req.body;
-    if(!body)
-         return res.status(400).end();
-
-    usuarios.push(body)
-    console.log(body);
-    return res.json({'resposta':true});
-    //
-});
+login.post('/adduser',script.cadastrar);
 
 //api de listar usuario
 login.get('/api/usuario',(req,res)=>{
@@ -22,6 +13,7 @@ login.get('/api/usuario',(req,res)=>{
 
 login.post('/api/user-cpf',script.vercpf);
 
+login.get('/criar/tabela/admin',script.criartb);
 
 
 

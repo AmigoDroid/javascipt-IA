@@ -1,14 +1,8 @@
 const Sequelize = require('sequelize');
-const database= require('./config')
+const db= require('./config')
 
 
-const usuario = database.define('usuario', {
-    id: {
-        type: Sequelize.INTEGER,
-        autoIncrement: true,
-        allowNull: false,
-        primaryKey: true
-    },
+const usuario = db.define('usuario', {
     nome: {
         type: Sequelize.STRING,
         allowNull: false
@@ -18,7 +12,8 @@ const usuario = database.define('usuario', {
         allowNull: false
     },
     cpf: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false
     },
     saldo: {
         type: Sequelize.FLOAT,allowNull:false
