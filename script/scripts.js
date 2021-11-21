@@ -23,7 +23,7 @@ async checar_user(req,res){
      const dados = await tabela.findAll();
      const positions = dados.length;
      if(positions<=0){
-         return res.json({resposta:false})
+         return res.json({resposta:false,code:504})
      }else{
          for(let i =0;i<positions;i++){
 
@@ -31,11 +31,11 @@ async checar_user(req,res){
              let passID=dados[i].senha;
 
              if(usuario==userID && senha==passID){
-                res.json({resposta:true,cpf:dados[i].cpf})
+                res.json({resposta:true,cpf:dados[i].cpf,code:1})
                 break;
              }else{
                  if(i>=positions){
-                     res.json({resposta:false})
+                     res.json({resposta:false,code:404})
                      break;
                  }
              }
@@ -83,9 +83,9 @@ async criartb(req,res){
 async cadastrar(req,res){
     const dados = req.body;
     await tabela.create(dados).then(()=>{
-        return res.json({resposta:true});
+        return res.json({resposta:true,code:1});
     }).catch(()=>{
-        return res.json({resposta:false})
+        return res.json({resposta:false,code:504})
     })
         
 }
