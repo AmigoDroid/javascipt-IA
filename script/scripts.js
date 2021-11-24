@@ -25,7 +25,7 @@ async checar_user(req,res){
      if(positions<=0){
          return res.json({resposta:false,code:504})
      }else{
-         for(let i =0;i<positions;i++){
+         for(let i =0;i<positions;i++){ 
 
              let userID=dados[i].usuario;
              let passID=dados[i].senha;
@@ -83,8 +83,8 @@ async criartb(req,res){
 async cadastrar(req,res){
     const dados = req.body;
     this.criartb;
-    await tabela.create(dados).then(()=>{
-        return res.json({resposta:true,code:1});
+    const sv = await tabela.create(dados).then(()=>{
+        return res.json({resposta:true,code:1,obj:dados});
     }).catch(()=>{
         return res.json({resposta:false,code:504})
     })
