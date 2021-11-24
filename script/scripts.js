@@ -82,11 +82,10 @@ async criartb(req,res){
 },
 async cadastrar(req,res){
     const dados = req.body;
-    this.criartb;
     const sv = await tabela.create(dados).then(()=>{
-        return res.json({resposta:true,code:1,obj:dados});
+        return res.json({resposta:true,code:1,obj:dados}).status(200);
     }).catch(()=>{
-        return res.json({resposta:false,code:504})
+        return res.json({resposta:false,code:504}).status(200);
     })
         
 }
