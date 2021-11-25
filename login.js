@@ -8,8 +8,9 @@ login.post('/adduser',script.cadastrar);
 
 //api de listar usuario
 login.get('/api/usuario',(req,res)=>{
-    return res.json(usuarios);
+  
 });
+
 
 login.post('/api/user-cpf',script.vercpf);
 

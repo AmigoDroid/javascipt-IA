@@ -1,28 +1,33 @@
-const Sequelize = require('sequelize');
+const sequelize = require('sequelize');
 const db= require('./config')
 
 
-const usuario =new  db.define('usuario', {
+const user = db.define('usuario', {
+    id:{
+
+        type: sequelize.INTEGER,
+        allowNoll:false,
+        autoIncrement:true,
+        primaryKey:true
+        
+    },
     nome: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: sequelize.STRING
     }, 
     sobrenome: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: sequelize.STRING
     },
     cpf: {
-        type: Sequelize.INTEGER,
-        allowNull: false
+        type: sequelize.STRING
     },
     saldo: {
-        type: Sequelize.FLOAT,allowNull:false
+        type: sequelize.STRING
     },
     usuario: {
-        type: Sequelize.STRING,allowNull:false
+        type: sequelize.STRING
     },
     senha: {
-        type: Sequelize.STRING,allowNull:false
+        type: sequelize.STRING
     }
 })
 module.exports=usuario;

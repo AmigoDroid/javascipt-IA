@@ -1,4 +1,5 @@
-const Siquelize = require('sequelize');
+const Sequelize = require('sequelize');
+
 const name_database='jacirfab';
 const user='jacirfab';
 const pass='PeRRDsLYXyIpSlyVLgdPXio8M7RVjGZd';
@@ -7,12 +8,13 @@ const url='castor.db.elephantsql.com';
 
  
 
-const sequelize = new Siquelize(name_database,user,pass,
+const sequelize = new Sequelize(name_database,user,pass,
     {
         host:url,
         dialect:'postgres'
     
     });
+
     sequelize.authenticate().then(()=>{
         console.log('conectado');
     }).catch(()=>{

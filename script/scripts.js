@@ -8,7 +8,8 @@ const usuarios =[
     {id:'6',Nome:'Olá Visitante',SobreNome:'',Cpf:12345678909,Saldo:20,usuario:'Visitar',senha:'1234'}
     ]
     //FERRAMENTAS
-    const tabela = require('../dadosPostgres/usuario');
+    const sequelize = require('sequelize');
+    const user = require('../dadosPostgres/usuario');
     const config = require('../dadosPostgres/config');
     
     
@@ -20,7 +21,7 @@ module.exports = {
 async checar_user(req,res){
      const body = req.body;
      const {usuario,senha}= body;
-     const dados = await tabela.findAll();
+     const dados = await user.findAll();
      const positions = dados.length;
      if(positions<=0){
          return res.json({resposta:false,code:504})
@@ -74,7 +75,7 @@ async vercpf(req,res){
 ,
 //CRIAR TABELA
 async criartb(req,res){
-    config.sync(tabela).then(()=>{
+    config.sync(user).then(()=>{
         res.send('tabela criada');
     }).catch(()=>{
         res.send('falha');
@@ -82,11 +83,7 @@ async criartb(req,res){
 },
 async cadastrar(req,res){
     const dados = req.body;
-    const sv = await tabela.create(dados).then(()=>{
-        return res.json({resposta:true,code:1,obj:dados}).status(200);
-    }).catch(()=>{
-        return res.json({resposta:false,code:504}).status(200);
-    })
-        
+    let df= await user.create(dados);
+    return res.json({resposta:true})
 }
   };
