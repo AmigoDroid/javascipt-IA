@@ -21,4 +21,4 @@ const sequelize = new Sequelize(name_database,user,pass,
         console.log('erro');
     });
 
-module.exports=sequelize;
+module.exports = sequelize;
