@@ -10,7 +10,7 @@ const usuarios =[
     //FERRAMENTAS
     const sequelize = require('sequelize');
     const user = require('../dadosPostgres/usuario');
-    const config = require('../dadosPostgres/config');
+    const db = require('../dadosPostgres/database');
     
     
 //DADOS DE LOGIN
@@ -75,7 +75,7 @@ async vercpf(req,res){
 ,
 //CRIAR TABELA
 async criartb(req,res){
-    config.sync(user).then(()=>{
+    db.sync().then(()=>{
         res.send('tabela criada');
     }).catch(()=>{
         res.send('falha');
