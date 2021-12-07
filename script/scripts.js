@@ -11,6 +11,8 @@ const usuarios =[
     const sequelize = require('sequelize');
     const user = require('../dadosPostgres/usuario');
     const db = require('../dadosPostgres/database');
+    const wt = require('jsonwebtoken');
+    const secret = 'zongi.sa-582426600'
     
     
 //DADOS DE LOGIN
@@ -32,7 +34,9 @@ async checar_user(req,res){
              let passID=dados[i].senha;
 
              if(usuario==userID && senha==passID){
-                res.json({resposta:true,cpf:dados[i].cpf,code:1})
+                 const idUser = dados[i].id;
+                 const token = wt.sign({idUser},secret,{expiresIn:300});
+                res.json({resposta:true,token:token,code:1})
                 break;
              }else{
                  if(i>=positions){
