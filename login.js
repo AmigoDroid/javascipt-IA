@@ -16,8 +16,19 @@ function altenticar(req,res,next){
             next();
         }
     })
-    
+}
 
+function homeLogado(req,res,next){
+    const token = req.params.token;
+
+    wt.verify(token,secret , function(err,decoded){
+        if(err){
+           return res.json({resposta:false});
+        }else{
+            res.json({resposta:true});
+            next();
+        }
+    })
 }
 
 login.post('/login',script.checar_user);
@@ -28,6 +39,7 @@ login.post('/adduser',script.cadastrar);
 login.get('/api/usuario',(req,res)=>{
   
 });
+login.get('/home/:token',homeLogado);
 
 
 login.post('/api/user-cpf',script.vercpf);
