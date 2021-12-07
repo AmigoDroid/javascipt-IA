@@ -16,8 +16,9 @@ function altenticar(req,res,next){
             next();
         }
     })
-    
+
 }
+
 
 function homeLogado(req,res,next){
     const token = req.params.token;
