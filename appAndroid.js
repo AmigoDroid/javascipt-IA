@@ -8,7 +8,7 @@ let usuarios =[
     {id:'3',Nome:'Wellington',SobreNome:'braz',Cpf:1520,Saldo:18758250.51,usuario:'braz01',senha:'0'},
     {id:'4',Nome:'Xuxa da silva',SobreNome:'braz',Cpf:4647,Saldo:18750.21,usuario:'xuxa01',senha:'xuxa'},
     {id:'5',Nome:'Isael Filho',SobreNome:'costa',Cpf:8740,Saldo:2.71,usuario:'Filhinho',senha:'0'},
-    {id:'6',Nome:'Olá Visitante',SobreNome:'sobre nome',Cpf:12345678909,Saldo:20,usuario:'Visitar',senha:'1234'}
+    {id:'6',Nome:'Olá Visitante',SobreNome:'sobre nome',Cpf:1234,Saldo:20,usuario:'Visitar',senha:'1234'}
     ]
 
 const usuario = {
