@@ -13,7 +13,9 @@ const app = express();
 app.use(morgan('dev'));
 app.use(boryparser.urlencoded({extended:false}));
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin:'*'
+}));
 app.use(routes);
 app.use(appAndroid);
 app.use(login);
